@@ -1,7 +1,2 @@
-clean
-vaccum
-clean again
-show duplicates
-apple
-orange
-pinapple
+Clean the floor
+Vaccum the carpet
