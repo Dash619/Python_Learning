@@ -17,9 +17,7 @@ while True:
             row = f"{index + 1}-{item.capitalize()}"
             print(row)
     elif 'edit' in user_action:
-        # number = int(input("Number of the todo to edit : "))
-        # number = number - 1
-        number = int(user_action[4:])
+        number = int(user_action[5:])
         with open('todos.txt', 'r') as file:
             todos = file.readlines()
         new_todo = input("Enter a new todo : ")
@@ -27,10 +25,9 @@ while True:
         with open('todos.txt', 'w') as file:
             file.writelines(todos)
     elif 'complete' in user_action:
-        number = int(user_action[8:])
+        number = int(user_action[9:])
         with open('todos.txt', 'r') as file:
             todos = file.readlines()
-        # number = int(input("Number of the todo to complete : "))
         index = number - 1
         todo_to_remove = todos[index].strip('\n')
         todos.pop(index)
@@ -40,6 +37,8 @@ while True:
         print(message)
     elif 'exit' in user_action:
         break
+    else:
+        print("Command is not valid")
 
 print("bye")
 
