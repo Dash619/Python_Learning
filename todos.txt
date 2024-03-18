@@ -1,0 +1,7 @@
+clean
+vaccum
+clean again
+show duplicates
+apple
+orange
+pinapple
