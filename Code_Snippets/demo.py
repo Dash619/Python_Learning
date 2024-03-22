@@ -1,10 +1,7 @@
-if __name__ == '__main__':
-    n = int(input())
-    arr = input().split()
+def greed():
+    message = "hello"
+    new_message = message.capitalize()
+    return new_message
 
-    scores = [int(score) for score in arr]
-    max_score = max(scores)
-    while max_score in scores:
-        scores.remove(max_score)
-    runner_up_score = max(scores)
-    print(runner_up_score)
+greeting = greed()
+print(greeting)
