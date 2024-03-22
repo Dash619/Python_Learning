@@ -1,7 +1,14 @@
-def get_todos():
-    with open('todos.txt', 'r') as file_local:
+def get_todos(filepath="todos.txt"):
+    """ Read a text file and return the list of to-do items """
+    with open(filepath, 'r') as file_local:
         todos_local = file_local.readlines()
     return todos_local
+
+
+def write_todos( todos_arg, filepath="todos.txt"):
+    """ Write the to-do items list in the text file"""
+    with open(filepath, 'w') as file_local:
+        file_local.writelines(todos)
 
 
 while True:
@@ -12,8 +19,7 @@ while True:
         todo = user_action[4:] + '\n'
         todos = get_todos()
         todos.append(todo)
-        with open('todos.txt', 'w') as file:
-            file.writelines(todos)
+        write_todos(todos)
     elif user_action.startswith('show'):
         todos = get_todos()
         for index, item in enumerate(todos):
@@ -26,8 +32,7 @@ while True:
             todos = get_todos()
             new_todo = input("Enter a new todo : ")
             todos[number - 1] = new_todo + '\n'
-            with open('todos.txt', 'w') as file:
-                file.writelines(todos)
+            write_todos(todos)
         except ValueError:
             print("Command not valid!")
             continue
@@ -38,8 +43,7 @@ while True:
             index = number - 1
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
-            with open('todos.txt', 'w') as file:
-                file.writelines(todos)
+            write_todos(todos)
             message = f"Todo {todo_to_remove} was removed from the list"
             print(message)
         except IndexError:

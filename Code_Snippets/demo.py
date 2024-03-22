@@ -1,7 +1,5 @@
-def greed():
-    message = "hello"
-    new_message = message.capitalize()
-    return new_message
+def speed(distance, time):
+    return distance / time
 
-greeting = greed()
-print(greeting)
+
+print(speed(300, 5))
