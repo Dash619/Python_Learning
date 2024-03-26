@@ -17,3 +17,8 @@ parsed = parse(feet_inches)
 result = convert(parsed['feet'], parsed['inches'])
 
 print(f"{parsed['feet']} feet and inches {parsed['inches']} is equal to {result} meters")
+
+if result < 1:
+    print("Kid is too small for ride")
+else:
+    print("Kid can use the slide")
