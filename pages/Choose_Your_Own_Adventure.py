@@ -5,6 +5,7 @@ from story_content import story
 if 'current_part' not in st.session_state:
     st.session_state.current_part = 'start'
 
+
 # Function to display a story part and choices
 def show_story_part(part_key):
     st.session_state.current_part = part_key  # Update the current part in session state
@@ -13,6 +14,7 @@ def show_story_part(part_key):
         if st.button(option_text):
             show_story_part(next_part)
 
+
 # Set up the main page
-st.header("Choose Your Own Adventure")
+st.header("The Young Adventurer")
 show_story_part(st.session_state.current_part)
