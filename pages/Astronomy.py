@@ -6,8 +6,6 @@ url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}"
 response = requests.get(url)
 content = response.json()
 
-st.set_page_config(layout="wide")
-
 st.title(content["title"])
 st.image(content["hdurl"])
 st.write(content["explanation"])
